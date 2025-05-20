@@ -1,6 +1,6 @@
+Primero tener instalado MySQL en el computador y crear una base de datos
 
-Base de datos : tiendaOnline
-
+Nombre Base de datos : tiendaOnline
 
 CREATE TABLE producto (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -47,3 +47,13 @@ INSERT INTO articulo_carrito (producto_id, cantidad) VALUES
 (9, 3),
 (10, 2);
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Pasos para que funcione el proyecto 
+
+1- Clonar Repositorio , una vez dentro moverse a la ruta /TiendaOnline/Frontend/tienda
+2- Instalar dependencias  npm install
+3-revisar si el proyecto angular abre -  ng serve -o  (en el puerto 4200 con localhost)
+4- abrir una nueva terminal de visual code , y dirigirse a la ruta de backend/src y ejecutar index.js con node index.js 
+	- eso levanta el servidor de MySQL con el puerto http://localhost:3000 (tiene que ser puerto 3000 ya que consumo por esa api)
+5- una vez levantado el servidor , la pagina debería de cargar los datos para su funcionamiento
