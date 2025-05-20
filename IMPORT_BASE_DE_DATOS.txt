@@ -1,0 +1,49 @@
+
+Base de datos : tiendaOnline
+
+
+CREATE TABLE producto (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  categoria VARCHAR(100) NOT NULL,
+  descripcion TEXT,
+  imagen VARCHAR(255),
+  precio DECIMAL(10,2) NOT NULL,
+  calificacion_tasa DECIMAL(3,2),
+  calificacion_cantidad INT,
+  titulo VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE articulo_carrito (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  producto_id INT NOT NULL,
+  cantidad INT NOT NULL,
+  FOREIGN KEY (producto_id) REFERENCES producto(id) ON DELETE CASCADE
+);
+
+
+INSERT INTO producto (categoria, descripcion, imagen, precio, calificacion_tasa, calificacion_cantidad, titulo) VALUES
+('men''s clothing', 'Your perfect pack for everyday use and walks in the forest.', 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg', 109.95, 3.9, 120, 'Fjallraven Backpack'),
+('men''s clothing', 'Slim-fitting style, light weight & soft fabric.', 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg', 22.3, 4.1, 259, 'Mens Premium T-Shirts'),
+('men''s clothing', 'Great jackets for Spring/Autumn/Winter.', 'https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg', 55.99, 4.7, 500, 'Mens Cotton Jacket'),
+('men''s clothing', 'Color may differ slightly on screen.', 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg', 15.99, 2.1, 430, 'Mens Slim Fit'),
+('jewelery', 'Inspired by the mythical water dragon.', 'https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg', 695.00, 4.6, 400, 'Naga Gold & Silver Bracelet'),
+('jewelery', 'Return or exchange within 30 days.', 'https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg', 168.00, 3.9, 70, 'Solid Gold Micropave'),
+('jewelery', 'Classic Created Wedding Engagement Ring.', 'https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg', 9.99, 3.0, 400, 'Princess Ring'),
+('electronics', 'Portable External Hard Drive - USB 3.0', 'https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg', 64.00, 3.3, 203, 'WD 2TB External HDD'),
+('electronics', 'SSD for faster boot up and performance.', 'https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg', 109.00, 2.9, 470, 'SanDisk SSD PLUS 1TB'),
+('electronics', 'Monitor 21.5 inches Full HD IPS Display.', 'https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg', 599.00, 2.9, 250, 'Acer SB220Q Monitor');
+
+
+
+INSERT INTO articulo_carrito (producto_id, cantidad) VALUES
+(1, 2),
+(2, 1),
+(3, 1),
+(4, 3),
+(5, 2),
+(6, 2),
+(7, 1),
+(8, 1),
+(9, 3),
+(10, 2);
+
